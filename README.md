@@ -452,12 +452,12 @@ And you should be good to use it in your views:
 @version
 ```
 
-As git versions are cached, you can tell composer to refresh your version numbers every time an update or install occur, by adding the refresh command to `post-autoload-dump`:  
+As git versions are cached, you can tell composer to refresh your version numbers every time an update or install occur, by adding the absorb (It will only work if you config.yml file mode is absorb) command to `post-autoload-dump`:  
 
 ``` json
 "post-autoload-dump": [
     ...
-    "@php artisan version:refresh"
+    "@php artisan version:absorb"
 ]
 ```
 
@@ -466,7 +466,7 @@ As git versions are cached, you can tell composer to refresh your version number
 ``` bash
 #!/bin/sh
 
-php artisan version:refresh
+php artisan version:absorb
 ```
 
 If you are using Git commits on your commit numbers, you may have to add the git repository to your .env file
